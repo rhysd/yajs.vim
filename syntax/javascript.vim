@@ -398,7 +398,7 @@ syntax match   javascriptAsynArrowFunc         /(\s*async\s*\(=>\)\@!/ contains=
 syntax keyword javascriptFuncKeyword           function nextgroup=javascriptAsyncFunc,javascriptSyncFunc
 
 " Special object for arrow function direct return
-syntax region  javascriptParenObjectLiteral    start=/\(=>\_s*\)\@<=(\_s*\ze{/ end=/)/ contains=javascriptObjectLiteral,@javascriptComments fold
+syntax region  javascriptParenObjectLiteral    contained start=/(\_s*\ze{/ end=/)/ contains=javascriptObjectLiteral,@javascriptComments fold
 " Special object for jsx return
 syntax region  javascriptParenTagLiteral       containedin=@javascriptValue start=/(\ze\_s*</ end=/)/ contains=@javascriptExpression,@javascriptComments fold
 
