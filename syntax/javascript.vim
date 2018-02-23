@@ -36,12 +36,21 @@ else
 endif
 
 " Dollar sign is permitted anywhere in an identifier
+" html might require - as keyword ch (ex: html5.vim)
 " Patch 7.4.1142
 if has("patch-7.4-1142")
   if has("win32")
-    syn iskeyword @,48-57,_,128-167,224-235,$
+    if exists("main_syntax") && main_syntax == 'html'
+      syn iskeyword @,48-57,_,128-167,224-235,$,-
+    else
+      syn iskeyword @,48-57,_,128-167,224-235,$
+  endif
   else
-    syn iskeyword @,48-57,_,192-255,$
+    if exists("main_syntax") && main_syntax == 'html'
+      syn iskeyword @,48-57,_,192-255,$,-
+    else
+      syn iskeyword @,48-57,_,192-255,$
+    endif
   endif
 endif
 
