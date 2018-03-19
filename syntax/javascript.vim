@@ -492,7 +492,7 @@ if exists("did_javascript_hilink")
   HiLink javascriptObjectMethodName     javascriptLabel
 
   HiLink javascriptFuncKeyword          Keyword
-  HiLink javascriptAsyncFunc            Keyword
+  HiLink javascriptAsyncFuncKeyword     Keyword
   HiLink javascriptArrowFunc            Statement
   HiLink javascriptFuncName             Function
   HiLink javascriptFuncArg              Special
