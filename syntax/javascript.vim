@@ -493,6 +493,7 @@ if exists("did_javascript_hilink")
 
   HiLink javascriptFuncKeyword          Keyword
   HiLink javascriptAsyncFuncKeyword     Keyword
+  HiLink javascriptAwaitFuncKeyword     Keyword
   HiLink javascriptArrowFunc            Statement
   HiLink javascriptFuncName             Function
   HiLink javascriptFuncArg              Special
