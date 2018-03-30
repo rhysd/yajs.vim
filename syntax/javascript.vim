@@ -363,7 +363,7 @@ syntax match   javascriptClassName             contained /\k\+/ nextgroup=javasc
 syntax match   javascriptClassSuperName        contained /[a-zA-Z_$][0-9a-zA-Z_$\[\]\.\(\)]*/ nextgroup=javascriptClassBlock skipwhite
 syntax keyword javascriptClassExtends          contained extends nextgroup=javascriptClassSuperName,javascriptClassExtendsNew skipwhite
 syntax keyword javascriptClassExtendsNew       contained new nextgroup=javascriptClassSuperName skipwhite
-syntax region  javascriptClassBlock            contained matchgroup=javascriptBraces start=/{/ end=/}/ contains=javascriptMethodName,javascriptMethodAccessor,javascriptClassStatic,@javascriptComments fold
+syntax region  javascriptClassBlock            contained matchgroup=javascriptBraces start=/{/ end=/}/ contains=javascriptMethodName,javascriptMethodAccessor,javascriptAsyncFuncKeyword,javascriptClassStatic,@javascriptComments fold
 syntax keyword javascriptClassStatic           contained static nextgroup=javascriptMethodName,javascriptMethodAccessor skipwhite
 
 
@@ -415,7 +415,7 @@ syntax region  javascriptParenTagLiteral       containedin=@javascriptValue star
 syntax region  javascriptParenExp              matchgroup=javascriptParens start=/(\ze\_s*(/ end=/)/ contains=@javascriptExpression nextgroup=@javascriptComments,javascriptOpSymbols skipwhite skipempty
 
 " async await
-syntax keyword javascriptAsyncFuncKeyword      async nextgroup=javascriptFuncKeyword,javascriptArrowFuncDef skipwhite
+syntax keyword javascriptAsyncFuncKeyword      async nextgroup=javascriptFuncKeyword,javascriptArrowFuncDef,javascriptMethodName skipwhite
 syntax keyword javascriptAwaitFuncKeyword      await nextgroup=@javascriptExpression skipwhite
 
 syntax cluster javascriptExpression            add=javascriptAsyncFuncKeyword,javascriptAwaitFuncKeyword
